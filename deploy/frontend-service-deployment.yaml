@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: acme-frontend
+  namespace: acme
+  labels:
+    app: frontend
+spec: 
+  selector: 
+    matchLabels: 
+      app: frontend
+  replicas: 3
+  template: 
+    metadata: 
+      labels: 
+        app: acme-in-app
+    spec: 
+      containers: 
+        - name: frontend
+          image: "fra.ocir.io/apaccpt03/acme/frontend-service:latest"
+          env:
+            - name: REACT_APP_API_URL
+              value: http://acme-quote-service:8080		  
+          imagePullPolicy: Always
+          ports: 
+            - name: acme-fe-port
+              containerPort: 80
+              protocol: TCP
+      imagePullSecrets:
+        - name: ocirsecret
