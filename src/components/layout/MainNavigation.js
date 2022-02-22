@@ -27,7 +27,7 @@ function MainNavigation() {
                 <button type="button" className="menu-toggle"><i className="fa fa-bars"></i></button>
                 <ul className="menu">
                     <li className="menu-item"><Link to='/'>Products</Link></li>
-                    <li className="menu-item"><Link to='/claims'>Quotes</Link></li>
+                    <li className="menu-item"><Link to='/quote'>Quotes</Link></li>
                     <li className="menu-item"><Link to='/about'>Contact Us</Link></li>
                 </ul> 
             </div> 
