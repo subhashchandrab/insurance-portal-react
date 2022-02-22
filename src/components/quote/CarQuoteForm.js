@@ -9,9 +9,8 @@ import Button from 'react-bootstrap/Button';
 import QuoteData from './QuoteData';
 import configData from "../../config.json";
 
+const { REACT_APP_QUOTE_SERVICE_URL } = process.env;
 class CarQuoteForm extends Component {
-
-
 
   state = {
     carNumber: "",
@@ -36,7 +35,7 @@ class CarQuoteForm extends Component {
       mobileNumber : this.state.mobileNumber
     }
 
-    fetch(configData.QUOTE_SERVICE_URL, {
+    fetch(REACT_APP_QUOTE_SERVICE_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(quoteData)    
