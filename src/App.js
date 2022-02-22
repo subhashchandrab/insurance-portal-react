@@ -11,7 +11,7 @@ function App() {
      <MainNavigation/>
      <Routes>
         <Route path='/' element={<ProductsPage/>} />
-        <Route path='/claims' element={<QuotePage/>} />
+        <Route path='/quote' element={<QuotePage/>} />
         <Route path='/renewals' element={<RenewalPage/>} />
         <Route path='/about' element={<AboutPage/>} />
      </Routes>
